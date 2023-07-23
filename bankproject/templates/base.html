@@ -1,0 +1,185 @@
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Default Title{% endblock %}</title>
+    <!-- Add your CSS and other meta tags here -->
+
+  <link rel="stylesheet" href="{% static 'css/bootstrap.css' %}">
+<!-- Bootstrap-Core-CSS -->
+<link rel="stylesheet" href="{% static 'css/style.css' %}" type="text/css" media="all" />
+<link rel="stylesheet" href="{% static 'css/slider.css' %}" type="text/css" media="all" />
+<!-- Style-CSS -->
+<!-- font-awesome-icons -->
+<link href="{% static 'css/font-awesome.css' %}" rel="stylesheet">
+<!-- //font-awesome-icons -->
+<!-- /Fonts -->
+<link href="//fonts.googleapis.com/css?family=Catamaran:100,200,300,400,500,600,700,800" rel="stylesheet">
+
+</head>
+<body>
+    <!-- Navbar code goes here -->
+
+    <div class="nav_w3pvt">
+                            <nav>
+                                <label for="drop" class="toggle">Menu</label>
+                                <input type="checkbox" id="drop" />
+                                <ul class="menu">
+                                    <li class="active"><a href="index.html">Home</a></li>
+                                    <li><a href="{% url 'login' %}">Login</a></li>
+                                    <li><a href="{% url 'register' %}">Register</a></li>
+                                    <li>
+                                        <!-- First Tier Drop Down -->
+                                        <label for="drop-2" class="toggle toogle-2">Branches <span class="fa fa-angle-down" aria-hidden="true"></span>
+                                        </label>
+                                        <a href="#">Dropdown <span class="fa fa-angle-down" aria-hidden="true"></span></a>
+                                        <input type="checkbox" id="drop-2" />
+                                        <ul>
+
+                                            <li><a href="#process" class="drop-text">Process</a></li>
+
+                                            <li><a href="#stats" class="drop-text">Statistics</a></li>
+                                            <li><a href="#services" class="drop-text">Services</a></li>
+                                            <li><a href="about.html" class="drop-text">Our Team</a></li>
+                                            <li><a href="#test" class="drop-text">Clients</a></li>
+                                        </ul>
+                                    </li>
+
+                                </ul>
+                            </nav>
+                        </div>
+
+    <nav>
+        <!-- Your navigation bar code here -->
+    </nav>
+
+    <!-- Content block that child templates can override -->
+    <div class="content">
+        {% block content %}{% endblock %}
+    </div>
+
+    <!-- Add your JavaScript files here -->
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="zxx">
+
+<head>
+    <title>banking webApp Project</title>
+    <!-- Meta tag Keywords -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="UTF-8" />
+    <meta name="keywords" content="Repay Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template, Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyEricsson, Motorola web design" />
+    <script>
+        addEventListener("load", function() {
+            setTimeout(hideURLbar, 0);
+        }, false);
+
+        function hideURLbar() {
+            window.scrollTo(0, 1);
+        }
+
+    </script>
+    <!-- //Meta tag Keywords -->
+    <!-- Custom-Files -->
+<!-- Custom-Files -->
+<link rel="stylesheet" href="{% static 'css/bootstrap.css' %}">
+<!-- Bootstrap-Core-CSS -->
+<link rel="stylesheet" href="{% static 'css/style.css' %}" type="text/css" media="all" />
+<link rel="stylesheet" href="{% static 'css/slider.css' %}" type="text/css" media="all" />
+<!-- Style-CSS -->
+<!-- font-awesome-icons -->
+<link href="{% static 'css/font-awesome.css' %}" rel="stylesheet">
+<!-- //font-awesome-icons -->
+<!-- /Fonts -->
+<link href="//fonts.googleapis.com/css?family=Catamaran:100,200,300,400,500,600,700,800" rel="stylesheet">
+
+
+    <!-- //Fonts -->
+</head>
+
+<body>
+    <!-- mian-content -->
+    <div class="main-w3-pvt-header-sec" id="home">
+
+        <!-- header -->
+        <header>
+            <div class="container">
+                <div class="header d-lg-flex justify-content-between align-items-center py-lg-3 px-lg-3">
+                    <!-- logo -->
+                    <div id="logo">
+                        <h1><a href="index.html"><span class="fa fa-recycle mr-2"></span>BANKING</a></h1>
+                    </div>
+                    <!-- //logo -->
+                    <div class="w3pvt-bg">
+                        <!-- nav -->
+                        <div class="nav_w3pvt">
+                            <nav>
+                                <label for="drop" class="toggle">Menu</label>
+                                <input type="checkbox" id="drop" />
+                                <ul class="menu">
+                                    <li class="active"><a href="index.html">Home</a></li>
+                                    <li><a href="{% url 'login' %}">Login</a></li>
+                                    <li><a href="{% url 'register' %}">Register</a></li>
+                                    <li>
+                                        <!-- First Tier Drop Down -->
+                                        <label for="drop-2" class="toggle toogle-2">Branches <span class="fa fa-angle-down" aria-hidden="true"></span>
+                                        </label>
+                                        <a href="#">Dropdown <span class="fa fa-angle-down" aria-hidden="true"></span></a>
+                                        <input type="checkbox" id="drop-2" />
+                                        <ul>
+
+                                            <li><a href="#process" class="drop-text">Process</a></li>
+
+                                            <li><a href="#stats" class="drop-text">Statistics</a></li>
+                                            <li><a href="#services" class="drop-text">Services</a></li>
+                                            <li><a href="about.html" class="drop-text">Our Team</a></li>
+                                            <li><a href="#test" class="drop-text">Clients</a></li>
+                                        </ul>
+                                    </li>
+
+                                </ul>
+                            </nav>
+                        </div>
+                        <!-- //nav -->
+                        <div class="justify-content-center">
+                            <!-- search -->
+                            <div class="apply-w3-pvt ml-lg-3">
+                                <a class="btn read" href="register.html" role="button">Apply Now</a>
+                            </div>
+                            <!-- //search -->
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <!-- //header -->

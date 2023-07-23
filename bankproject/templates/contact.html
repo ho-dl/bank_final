@@ -1,0 +1,465 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="zxx">
+
+<head>
+    <title>Repay Net Banking Category Bootstrap Responsive Web Template | Contact :: W3layouts</title>
+    <!-- Meta tag Keywords -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="UTF-8" />
+    <meta name="keywords" content="Repay Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template, Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyEricsson, Motorola web design" />
+    <script>
+        addEventListener("load", function() {
+            setTimeout(hideURLbar, 0);
+        }, false);
+
+        function hideURLbar() {
+            window.scrollTo(0, 1);
+        }
+
+    </script>
+    <!-- //Meta tag Keywords -->
+    <!-- Custom-Files -->
+    <link rel="stylesheet" href="{% static 'css/bootstrap.css' %}">
+    <!-- Bootstrap-Core-CSS -->
+    <link rel="stylesheet" href="{% static 'css/style.css' %}" type="text/css" media="all" />
+    <link rel="stylesheet" href="{% static 'css/slider.css' %}" type="text/css" media="all" />
+    <!-- Style-CSS -->
+    <!-- font-awesome-icons -->
+    <link href="{% static 'css/font-awesome.css' %}" rel="stylesheet">
+    <!-- //font-awesome-icons -->
+    <!-- /Fonts -->
+    <link href="//fonts.googleapis.com/css?family=Catamaran:100,200,300,400,500,600,700,800" rel="stylesheet">
+    <!-- //Fonts -->
+</head>
+
+<body>
+    <!-- mian-content -->
+    <div class="main-w3-pvt-header-sec page-w3pvt-inner" id="home">
+        <div class="overlay-innerpage">
+            <!-- header -->
+            <header>
+                <div class="container">
+                    <div class="header d-lg-flex justify-content-between align-items-center py-lg-3 px-lg-3">
+                        <!-- logo -->
+                        <div id="logo">
+                            <h1><a href="/"><span class="fa fa-recycle mr-2"></span>Repay</a></h1>
+                        </div>
+                        <!-- //logo -->
+                        <div class="w3pvt-bg">
+                            <!-- nav -->
+<div class="nav_w3pvt">
+                            <nav>
+                                <label for="drop" class="toggle">Menu</label>
+                                <input type="checkbox" id="drop" />
+                                <ul class="menu">
+                                    <li class="active"><a href="/">Home</a></li>
+
+                                    {% if user.is_authenticated %}
+                                    <li>hello {{user.username}}</li>
+                                    <li><a href="/logout">logout</a></li>
+                                    {% else %}
+
+                                    <li><a href="/register">Register</a></li>
+                                    <li><a href="/login">Login</a></li>
+                                    {% endif %}
+
+                                    <li>
+                                        <!-- First Tier Drop Down -->
+                                        <label for="drop-2" class="toggle toogle-2">Branches<span class="fa fa-angle-down" aria-hidden="true"></span>
+                                        </label>
+                                        <a href="#">Branches<span class="fa fa-angle-down" aria-hidden="true"></span></a>
+                                        <input type="checkbox" id="drop-2" />
+                                        <ul>
+
+                                            <li><a href="#process" class="drop-text">Process</a></li>
+
+                                            <li><a href="#stats" class="drop-text">Statistics</a></li>
+                                            <li><a href="#services" class="drop-text">Services</a></li>
+                                            <li><a href="about.html" class="drop-text">Our Team</a></li>
+                                            <li><a href="#test" class="drop-text">Clients</a></li>
+                                        </ul>
+                                    </li>
+
+                                </ul>
+                            </nav>
+                        </div>
+                            <!-- //nav -->
+                            <div class="justify-content-center">
+                                <!-- search -->
+
+                                <!-- //search -->
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </header>
+            <!-- //header -->
+            <!-- /banner-inner -->
+
+            <!-- //banner-inner -->
+        </div>
+    </div>
+    <!-- //banner -->
+
+    {% if messages %}
+    <div class="alert alert-success">
+        {{ messages }}
+    </div>
+{% endif %}
+    <!-- /contact -->
+
+
+    {% if success_message %}
+    <div class="alert alert-success mt-3">
+        <a href="/" id="submitButton" class="btn btn-primary" >Return To Home</a>
+
+    {{ success_message }}
+</div>
+{% endif %}
+
+
+
+
+
+
+
+    <section class="content-info py-5">
+        <div class="container py-md-5">
+            <div class="text-center px-lg-5">
+                <h3 class="title-w3ls mb-5">Apply For New Account</h3>
+                <div class="title-desc text-center px-lg-5">
+                    <p class="px-lg-5 sub-vj">Praesent ullamcorper dui turpis.At vero eos et accusam et justo duo dolores et ea rebum.Integer sit amet mattis quam, sit amet ultricies velit. Praesent ullamcorper dui turpis.
+                        Praesent ullamcorper dui turpis.</p>
+                </div>
+            </div>
+
+
+
+<div class="container mt-5">
+    <h2 class="mb-4">Bank Account Form</h2>
+    <form id="contactForm" action="{% url 'submit_form' %}" method="post">
+        {% csrf_token %}
+        <div class="form-group">
+            <label for="name">Name</label>
+            <input type="text" class="form-control" id="name" required>
+        </div>
+        <div class="form-group">
+            <label for="dob">Date of Birth</label>
+            <input type="date" class="form-control" id="dob" required>
+        </div>
+        <div class="form-group">
+            <label for="age">Age</label>
+            <input type="number" class="form-control" id="age" required>
+        </div>
+        <div class="form-group">
+            <label>Gender</label>
+            <div class="form-check">
+                <input type="radio" class="form-check-input" name="gender" id="male" value="Male" required>
+                <label class="form-check-label" for="male">Male</label>
+            </div>
+            <div class="form-check">
+                <input type="radio" class="form-check-input" name="gender" id="female" value="Female" required>
+                <label class="form-check-label" for="female">Female</label>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="phone">Phone Number</label>
+            <input type="tel" class="form-control" id="phone" required>
+        </div>
+        <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" class="form-control" id="email" required>
+        </div>
+        <div class="form-group">
+            <label for="address">Address</label>
+            <textarea class="form-control" id="address" required></textarea>
+        </div>
+        <div class="form-group">
+            <label for="district">District</label>
+            <select class="form-control" id="district" required>
+                <option value="">Select District</option>
+                <option value="Ernakulam">Ernakulam</option>
+                <option value="Trivandrum">Trivandrum</option>
+                <option value="Trivandrum">Kannur</option>
+                <option value="Trivandrum">Kozhikod</option>
+                <!-- Add more districts here -->
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="branch">Branch</label>
+            <select class="form-control" id="branch" required>
+                <option value="">Select Branch</option>
+
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="accountType">Account Type</label>
+            <select class="form-control" id="accountType" required>
+                <option value="">Select Account Type</option>
+                <option value="Savings Account">Savings Account</option>
+                <option value="Current Account">Current Account</option>
+                <!-- Add more account types here -->
+            </select>
+        </div>
+        <div class="form-group">
+            <label>Materials Provide</label>
+            <div class="form-check">
+                <input type="checkbox" class="form-check-input" id="debitCard">
+                <label class="form-check-label" for="debitCard">Debit Card</label>
+            </div>
+            <div class="form-check">
+                <input type="checkbox" class="form-check-input" id="creditCard">
+                <label class="form-check-label" for="creditCard">Credit Card</label>
+            </div>
+            <div class="form-check">
+                <input type="checkbox" class="form-check-input" id="chequeBook">
+                <label class="form-check-label" for="chequeBook">Cheque Book</label>
+            </div>
+            <!-- Add more materials here -->
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+        <a href="/logout" class="btn btn-secondary">Logout</a>
+
+
+    </form>
+
+
+
+
+</div>
+
+
+
+
+
+
+
+
+
+
+<!-- Add Bootstrap JS scripts here (Optional) -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+
+<script>
+
+    const districtDropdown = document.getElementById('district');
+    const branchDropdown = document.getElementById('branch');
+
+    districtDropdown.addEventListener('change', () => {
+
+        branchDropdown.innerHTML = '<option value="">Select Branch</option>';
+
+
+        const selectedDistrict = districtDropdown.value;
+
+
+        if (selectedDistrict === 'Ernakulam') {
+            const ernakulamBranches = ['branch 1', 'branch 2'];
+            for (const branch of ernakulamBranches) {
+                const option = document.createElement('option');
+                option.value = branch;
+                option.textContent = branch;
+                branchDropdown.appendChild(option);
+            }
+        } else if (selectedDistrict === 'Trivandrum') {
+            const trivandrumBranches = ['Branch 1', 'branch 2'];
+            for (const branch of trivandrumBranches) {
+                const option = document.createElement('option');
+                option.value = branch;
+                option.textContent = branch;
+                branchDropdown.appendChild(option);
+            }
+        }
+
+    });
+</script>
+
+
+
+        </div>
+    </section>
+    <!-- //contact -->
+    <!-- /map-->
+    <div class="map-w3-pvt">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d423286.27404345275!2d-118.69191921441556!3d34.02016130939095!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80c2c75ddc27da13%3A0xe22fdf6f254608f4!2sLos+Angeles%2C+CA%2C+USA!5e0!3m2!1sen!2sin!4v1522474296007" allowfullscreen=""></iframe>
+    </div>
+    <!-- //map-->
+    <!-- footer -->
+    <footer class="footer-content py-5">
+        <div class="container py-md-3">
+            <div class="footer-top text-center">
+                <h2>
+                    <a class="navbar-brand pt-3 mb-5" href="index.html">
+                        <span class="fa fa-recycle"></span> Repay
+                    </a>
+                </h2>
+            </div>
+            <div class="row footer-top-inner-w3-pvt">
+                <div class="col-lg-3 col-md-6 mt-lg-0 mt-4">
+                    <div class="footer-wthree">
+                        <h3 class="mb-3 wthree_title">Links</h3>
+                        <hr>
+                        <ul class="list-info-wthree">
+                            <li>
+                                <a href="about.html"><span class="fa fa-angle-double-right" aria-hidden="true"></span>
+                                    Our Mission
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#"><span class="fa fa-angle-double-right" aria-hidden="true"></span>
+                                    Latest Posts
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#"><span class="fa fa-angle-double-right" aria-hidden="true"></span>
+                                    Explore
+                                </a>
+                            </li>
+                            <li>
+                                <a href="contact.html"><span class="fa fa-angle-double-right" aria-hidden="true"></span>
+                                    Find us
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#"><span class="fa fa-angle-double-right" aria-hidden="true"></span>
+                                    Privacy Policy
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 mt-lg-0 mt-4">
+                    <div class="footer-wthree">
+                        <h3 class="mb-3 wthree_title">Navigation</h3>
+                        <hr>
+                        <ul class="list-info-wthree">
+                            <li>
+                                <a href="index.html"><span class="fa fa-angle-double-right" aria-hidden="true"></span>
+                                    Home
+                                </a>
+                            </li>
+                            <li>
+                                <a href="about.html"><span class="fa fa-angle-double-right" aria-hidden="true"></span>
+                                    About Us
+                                </a>
+                            </li>
+                            <li>
+                                <a href="single.html"><span class="fa fa-angle-double-right" aria-hidden="true"></span>
+                                    Single Page
+                                </a>
+                            </li>
+                            <li>
+                                <a href="about.html"><span class="fa fa-angle-double-right" aria-hidden="true"></span>
+                                    Team
+                                </a>
+                            </li>
+                            <li>
+                                <a href="contact.html"><span class="fa fa-angle-double-right" aria-hidden="true"></span>
+                                    Contact Us
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 mt-lg-0 mt-4">
+                    <div class="footer-wthree">
+                        <h3 class="mb-3 wthree_title">Customer Care</h3>
+                        <hr>
+                        <ul class="list-info-wthree">
+                            <li>
+                                <a href="about.html"><span class="fa fa-angle-double-right" aria-hidden="true"></span>
+                                    Our Mission
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#"><span class="fa fa-angle-double-right" aria-hidden="true"></span>
+                                    Latest Posts
+                                </a>
+                            </li>
+                            <li><span class="fa fa-angle-double-right" aria-hidden="true"></span>
+                                <a href="#">
+                                    Explore
+                                </a>
+                            </li>
+                            <li>
+                                <a href="contact.html"><span class="fa fa-angle-double-right" aria-hidden="true"></span>
+                                    Find us
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#"><span class="fa fa-angle-double-right" aria-hidden="true"></span>
+                                    Privacy Policy
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 mt-lg-0 mt-4">
+                    <div class="footer-wthree">
+                        <h3 class="mb-3 wthree_title">Contact Us</h3>
+                        <hr>
+                        <div class="last-w3-pvt-contact">
+                            <p>
+                                <a href="mailto:example@email.com">info@example.com</a>
+                            </p>
+                        </div>
+                        <div class="last-w3-pvt-contact my-2">
+                            <p>+ 456 123 7890</p>
+                        </div>
+                        <div class="last-w3-pvt-contact">
+                            <p>+ 90 nsequursu dsdesdc,
+                                <br>xxx Honey Street 049436.</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+        <!-- //footer bottom -->
+    </footer>
+    <!-- //footer -->
+    <div class="copy-right">
+        <div class="container">
+            <div class="row">
+                <p class="copy-right-grids text-md-left text-center my-sm-4 my-4 col-md-6">© 2019 Repay. All Rights Reserved | Design by
+                    <a href="http://w3layouts.com/"> W3layouts </a>
+                </p>
+                <div class="w3-pvt-footer text-md-right text-center mt-4 col-md-5">
+                    <ul class="list-unstyled w3-pvt-icons">
+                        <li>
+                            <a href="#">
+                                <span class="fa fa-facebook-f"></span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <span class="fa fa-twitter"></span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <span class="fa fa-dribbble"></span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <span class="fa fa-vk"></span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="move-top text-right col-md-1"><a href="#home" class="move-top"> <span class="fa fa-angle-up  mb-3" aria-hidden="true"></span></a></div>
+
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
